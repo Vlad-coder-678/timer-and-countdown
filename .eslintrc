@@ -1,0 +1,93 @@
+{
+  "extends": ["react-app", "plugin:jsx-a11y/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./",
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": ["jsx-a11y", "@typescript-eslint"],
+  // add new rules here
+  "rules": {
+    // Предотвращение проверки отсутствующих реквизитов в определении компонента React
+    "react/prop-types": "off",
+    // чтобы любые необязательные типы свойств компонента имели соответствующее defaultProps значение
+    "react/require-default-props": "off",
+    // направлено на обеспечение согласованности типов функций для функциональных компонентов
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    // вносят ограничения на расширения файлов, которые могут содержать JSX
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    // обеспечивает согласованное использование расширения файла в пути импорта
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    // запрещает давать переменным имена зарезервированными словами + переопределяется typescript
+    "no-shadow": "off",
+    // запрещает давать переменным имена зарезервированными словами
+    "@typescript-eslint/no-shadow": ["error"],
+    // запрещает неиспользуемые переменные + переопределяется typescript
+    "no-unused-vars": "off",
+    // запрещает неиспользуемые переменные
+    "@typescript-eslint/no-unused-vars": "error",
+    // гарантирует, что импортированный модуль может быть преобразован в модуль в локальной файловой системе,
+    // как определено стандартным require.resolve поведением Node
+    "import/no-unresolved": "off",
+    // требует/запрещает запятые в конце
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "always-multiline"
+    }],
+    // обеспечивает согласованный стиль разрыва строки для операторов
+    "operator-linebreak": ["error", "after"],
+    // требует/запрещает разрыв строки между { и его следующим токеном, а также между } и его предшествующим токеном
+    "object-curly-newline": "error",
+    // обеспечивает согласованные разрывы строк внутри фигурных выражений jsx
+    "react/jsx-curly-newline": "error",
+    // button-type по умолчанию "submit", что может привести к нежелательным перезагрузкам страницы. типы: "button", "submit", "reset"
+    "react/button-has-type": "error",
+    // максимальная длина строки
+    "max-len": ["warn", { "code": 150 }],
+    // запрещает переназначение параметров функции
+    "no-param-reassign": ["error", { "props": false }],
+    // отступы
+    "indent": ["error", 2],
+    // ограничивает каждую строку в JSX одним выражением
+    "react/jsx-one-expression-per-line": "error",
+    // направлено на обеспечение согласованного расположения стрелочной функции, содержащей неявный возврат
+    "implicit-arrow-linebreak": "off",
+    // позволяет определять строки одним из трех способов: двойные кавычки "double", одинарные кавычки 'single' и обратные кавычки `backtick` (начиная с ECMAScript 6)
+    "quotes": ["error", "double"],
+    // требует/запрещает точки с запятой в конце каждого оператора
+    "semi": ["error", "always"],
+    // запрещает конечные пробелы (пробелы, табуляции и другие пробельные символы Юникода) в конце строк
+    "no-trailing-spaces": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+      }
+    }
+  }
+}
