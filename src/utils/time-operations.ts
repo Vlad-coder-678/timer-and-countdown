@@ -1,4 +1,4 @@
-import { MAX_COUNDOWN_MS, MIN_COUNDOWN_MS } from "constants/timer";
+import { MAX_COUNTDOWN_MS, MIN_COUNTDOWN_MS } from "constants/timer";
 
 const getMilliseconds = (milliseconds: number) => new Date(milliseconds).getUTCMilliseconds();
 
@@ -23,18 +23,19 @@ const getCurrentTime = (
   inputValue: string,
 ) => {
   const validValue = Number(inputValue);
+  let resultTime;
 
   if (inputName === "seconds") {
     const previousSeconds = getSeconds(state) * 1000;
     const currentSeconds = validValue * 1000;
-    const result = state - previousSeconds + currentSeconds;
-    return result >= MIN_COUNDOWN_MS ? result : MIN_COUNDOWN_MS;
+    resultTime = state - previousSeconds + currentSeconds;
   } else {
     const previousMinutes = getMinutes(state) * 1000 * 60;
     const currentMinutes = validValue * 1000 * 60;
-    const result = state - previousMinutes + currentMinutes;
-    return result >= MAX_COUNDOWN_MS ? MAX_COUNDOWN_MS : (result >= MIN_COUNDOWN_MS) ? result : MIN_COUNDOWN_MS;
+    resultTime = state - previousMinutes + currentMinutes;
   }
+
+  return resultTime >= MAX_COUNTDOWN_MS ? MAX_COUNTDOWN_MS : resultTime >= MIN_COUNTDOWN_MS ? resultTime : MIN_COUNTDOWN_MS;
 };
 
 export {

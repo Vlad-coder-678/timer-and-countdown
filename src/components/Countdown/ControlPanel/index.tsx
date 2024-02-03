@@ -3,7 +3,7 @@ import React, { ChangeEvent, FC } from "react";
 
 // internal imports
 // constants
-import { MAX_COUNDOWN_MS, MIN_COUNDOWN_MS } from "constants/timer";
+import { MAX_COUNTDOWN_MS, MIN_COUNTDOWN_MS } from "constants/timer";
 // utils
 import { getCurrentTime, getMinutes, getSeconds } from "utils/time-operations";
 import { InputNumber, InputRange } from "./styles";
@@ -29,8 +29,8 @@ const ControlPanel: FC<Props> = ({ currentTime, setCurrentTime }) => {
         <InputRange
           type="range"
           step={15000}
-          min={MIN_COUNDOWN_MS}
-          max={MAX_COUNDOWN_MS}
+          min={MIN_COUNTDOWN_MS}
+          max={MAX_COUNTDOWN_MS}
           value={currentTime}
           onChange={handleInputRangeChange}
         />
