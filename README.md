@@ -4,6 +4,8 @@
 
 [Документация на русском](https://ru.reactjs.org/docs/getting-started.html)
 
+Deploy: https://vlad-coder-678.github.io/timer-and-countdown/
+
 ### Подготовка окружения
 
 1. Установка [node.js](https://nodejs.org/en) и [npm](https://www.npmjs.com/)
