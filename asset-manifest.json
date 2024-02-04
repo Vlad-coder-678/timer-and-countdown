@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/static/js/main.5ff98fd6.js",
-    "static/media/timer.mp3": "/static/media/timer.dc6890850018e65e21c7.mp3",
-    "static/media/timer-signal.mp3": "/static/media/timer-signal.91373b1b6a794ce5225a.mp3",
-    "index.html": "/index.html",
-    "main.5ff98fd6.js.map": "/static/js/main.5ff98fd6.js.map"
+    "main.js": "/timer-and-countdown/static/js/main.5ff98fd6.js",
+    "static/media/timer.mp3": "/timer-and-countdown/static/media/timer.dc6890850018e65e21c7.mp3",
+    "static/media/timer-signal.mp3": "/timer-and-countdown/static/media/timer-signal.91373b1b6a794ce5225a.mp3",
+    "index.html": "/timer-and-countdown/index.html",
+    "main.5ff98fd6.js.map": "/timer-and-countdown/static/js/main.5ff98fd6.js.map"
   },
   "entrypoints": [
-    "static/js/main.5ff98fd6.js"
+    "/timer-and-countdown/static/js/main.5ff98fd6.js"
   ]
 }
